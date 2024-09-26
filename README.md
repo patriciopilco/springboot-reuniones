@@ -15,5 +15,18 @@ CommandLineRunner
 
 ## Mensajes (RabbitMQ)
 
+## Repositorios REST
 
+http://localhost:8081/api/rest
+```
+    base-path: "api/rest"
+```
+
+```
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-data-rest</artifactId>
+	</dependency>
+```
+   
 
