@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+
+<form action="#" th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout">
+</form>
+
 <div class="container">
 
     <h1>Personas</h1>
@@ -14,14 +19,16 @@
             <tr>
                 <th>Id</th>
                 <th>Nombre</th>
-                <th>Edad</th>
+                <th>Apellido</th>
+                <th>Email</th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="persona : ${personas}">
                 <td th:text="${persona.id}"></td>
                 <td th:text="${persona.nombre}"></td>
-                <td th:text="${persona.edad}"></td>
+                <td th:text="${persona.apellido}"></td>
+                <td th:text="${persona.email}"></td>
             </tr>
         </tbody>
     </table>

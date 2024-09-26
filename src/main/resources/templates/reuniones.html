@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reuniones</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<form action="#" th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout">
+</form>
+    <div class="container">
+        <h1>Reuniones</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Fecha</th>
+                    <th>Asunto</th>
+                    <th>Asistentes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="reunion : ${reuniones}">
+                    <td th:text="${reunion.id}"></td>
+                    <td th:text="${#temporals.format(reunion.fecha, 'dd-MMM-yyy')}"></td>
+                    <td th:text="${reunion.asunto}"></td>
+                    <td>
+                        <ul>
+                            <li th:each="asistente : ${reunion.asistentes}" th:text="${asistente.nombre}" ></li>
+                        </ul>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

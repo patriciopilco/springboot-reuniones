@@ -1,4 +1,11 @@
 package com.xpoch.reuniones.data;
 
-public class PersonaRepository {
+
+import com.xpoch.reuniones.models.Persona;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
+
+public interface PersonaRepository extends JpaRepository<Persona, Long> {
+
 }

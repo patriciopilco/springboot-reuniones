@@ -1,14 +1,15 @@
-package com.xpoch.reuniones;
+package com.xpoch.reuniones.task;
 
 import com.xpoch.reuniones.services.PersonaService;
-import org.hibernate.annotations.Comment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
+@Order(1)
 public class DirectorioRunner implements CommandLineRunner {
 
     private static final Logger LOG = LoggerFactory.getLogger(DirectorioRunner.class);
@@ -18,10 +19,10 @@ public class DirectorioRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("Hola desde el runner");
+        LOG.info("Hola desde el runner");
         personaService.getAllPersonas().forEach(persona -> {
             LOG.info("Persona: {}", persona);
         });
-        System.out.println("Fin del directorio");
+        LOG.info("Fin del directorio");
     }
 }
