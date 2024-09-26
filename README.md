@@ -28,5 +28,17 @@ http://localhost:8081/api/rest
 		<artifactId>spring-boot-starter-data-rest</artifactId>
 	</dependency>
 ```
-   
 
+## Repositorios ACTUATOR
+
+
+```
+    base-path: "api/rest"
+```
+
+```
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-actuator</artifactId>
+	</dependency>
+```

@@ -20,6 +20,16 @@ spring:
   data:
     rest:
       base-path: "api/rest"
+management:
+    endpoints:
+      web:
+        exposure:
+            include: "*"
+    endpoint:
+      health:
+        roles: "USER"
+        show-details: "when_authorized"
+
 ---
 spring:
   config:

@@ -25,7 +25,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authz -> authz
                         .requestMatchers("/api/**", "/api/rest/**").hasRole("API_USER")
                         .requestMatchers("/login").permitAll()
-                        .anyRequest().authenticated()
+                        .requestMatchers("/*", "/actuator/**").authenticated()
                 )
                 .formLogin(login -> login
                         .loginPage("/login")
