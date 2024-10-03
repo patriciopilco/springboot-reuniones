@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
-        <div class="row">
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="row" style="width: 100%">
             <div th:if="${param.error}"> Usuario o contrasena incorrectos</div>
             <div th:if="${param.logout}">Has salido de la cuenta</div>
         </div>
